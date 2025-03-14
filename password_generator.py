@@ -112,4 +112,4 @@ if st.button("Generate Passwords"):
 
 # Footer
 st.markdown("---")
-st.write("Built with ❤️ using Streamlit")
+st.write("Built with ❤️ by SZ Abbas using Streamlit")
