@@ -44,7 +44,7 @@ def check_password_strength(password):
 # Streamlit App UI
 st.set_page_config(page_title="Password Generator", layout="centered")
 
-"""# Dark mode toggle
+# Dark mode toggle
 dark_mode = st.toggle("🌙 Dark Mode")
 # Apply dark mode using built-in Streamlit theme settings
 if dark_mode:
@@ -68,7 +68,7 @@ if dark_mode:
         }
         </style>
     """, unsafe_allow_html=True)
-"""
+
 # Light Grey Theme Toggle
 light_grey_theme = st.toggle("🌫️ Light Grey Theme")
 
