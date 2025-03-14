@@ -98,12 +98,20 @@ if st.button("Generate Passwords"):
             unsafe_allow_html=True
         )
 
+    # Convert list of passwords to a single string
+    password_text = "\n".join(str(p) for p in passwords)  # Ensure all items are strings
+
     # Save passwords to file
-    buffer = io.StringIO()
-    #for password in passwords:
-    buffer.write("\n".join(passwords).encode())
-    buffer.seek(0)
-    st.download_button(label="📥 Save Passwords", data=buffer, file_name="passwords.txt", mime="text/plain")
+    buffer = io.BytesIO()
+    buffer.write(password_text.encode("utf-8"))  # Encode properly
+    buffer.seek(0)  # Move cursor to the beginning
+
+    st.download_button(
+        label="📥 Save Passwords",
+        data=buffer,
+        file_name="passwords.txt",
+        mime="text/plain"
+    )
 
     # Expiration Timer
     with st.spinner(f"These passwords will expire in {expiration_time} seconds..."):
