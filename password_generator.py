@@ -100,7 +100,7 @@ if st.button("Generate Passwords"):
 
     # Save passwords to file
     buffer = io.StringIO()
-    3for password in passwords:
+    #for password in passwords:
     buffer.write("\n".join(passwords).encode())
     buffer.seek(0)
     st.download_button(label="📥 Save Passwords", data=buffer, file_name="passwords.txt", mime="text/plain")
