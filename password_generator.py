@@ -46,12 +46,28 @@ st.set_page_config(page_title="Password Generator", layout="centered")
 
 # Dark mode toggle
 dark_mode = st.toggle("🌙 Dark Mode")
+# Apply dark mode using built-in Streamlit theme settings
 if dark_mode:
     st.markdown("""
         <style>
-        body { background-color: #1e1e1e; color: white; }
+        :root {
+            --primary-background-color: #0e1117;
+            --secondary-background-color: #161b22;
+            --text-color: white;
+        }
+        body {
+            background-color: var(--primary-background-color);
+            color: var(--text-color);
+        }
+        .stApp {
+            background-color: var(--primary-background-color);
+        }
+        .stButton>button {
+            background-color: #238636;
+            color: white;
+        }
         </style>
-        """, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
 st.title("🔑 Advanced Password Generator")
 st.write("Generate secure passwords with advanced features.")
