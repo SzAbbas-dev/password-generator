@@ -44,7 +44,7 @@ def check_password_strength(password):
 # Streamlit App UI
 st.set_page_config(page_title="Password Generator", layout="centered")
 
-# Dark mode toggle
+"""# Dark mode toggle
 dark_mode = st.toggle("🌙 Dark Mode")
 # Apply dark mode using built-in Streamlit theme settings
 if dark_mode:
@@ -65,6 +65,41 @@ if dark_mode:
         .stButton>button {
             background-color: #238636;
             color: white;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+"""
+# Light Grey Theme Toggle
+light_grey_theme = st.toggle("🌫️ Light Grey Theme")
+
+# Apply light grey theme using CSS
+if light_grey_theme:
+    st.markdown("""
+        <style>
+        :root {
+            --primary-background-color: #f0f0f0;  /* Light Grey */
+            --secondary-background-color: #e0e0e0; /* Slightly Darker Grey */
+            --text-color: #333333;  /* Dark Grey Text */
+            --button-bg: #d6d6d6;
+            --button-hover: #bbbbbb;
+        }
+        body {
+            background-color: var(--primary-background-color);
+            color: var(--text-color);
+        }
+        .stApp {
+            background-color: var(--primary-background-color);
+        }
+        .stButton>button {
+            background-color: var(--button-bg);
+            color: black;
+            border: 1px solid #cccccc;
+        }
+        .stButton>button:hover {
+            background-color: var(--button-hover);
+        }
+        .stSidebar {
+            background-color: var(--secondary-background-color);
         }
         </style>
     """, unsafe_allow_html=True)
